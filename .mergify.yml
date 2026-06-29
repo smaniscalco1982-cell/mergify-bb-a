@@ -1,0 +1,15 @@
+pull_request_rules:
+  - name: s2 merge on one approval
+    conditions:
+      - "#approved-reviews-by>=1"
+      - label=s2
+    actions:
+      merge:
+        method: merge
+  - name: s3 merge on ci check-success
+    conditions:
+      - check-success=ci
+      - label=s3
+    actions:
+      merge:
+        method: merge
