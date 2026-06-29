@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: dismiss approvals on new commit
+  - name: dismiss approvals when new commits are pushed
     conditions: [base=main]
     actions: { dismiss_reviews: { approved: true } }
-  - name: merge on one approval
-    conditions: ["#approved-reviews-by>=1", label=s2]
+  - name: merge once approved and labelled
+    conditions: ["#approved-reviews-by>=1", label=ready]
     actions: { merge: { method: merge } }
