@@ -1,1 +1,5 @@
+commands_restrictions:
+  update:
+    conditions:
+      - sender-permission>=write
 pull_request_rules: []
